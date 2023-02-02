@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      /* Style for the body element */
+      body {
+        display: flex; /* Display as a flex container */
+        height: 100vh; /* Set the height to the full height of the viewport */
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+      }
+
+      /* Style for the form element */
+      form {
+        display: inline-block; /* Display as an inline-block element */
+      }
+
+      /* Style for the error message */
+      .error {
+        color: red; /* Set the text color to red */
+        display: none; /* Hide the error message by default */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hi! I am George!</h1>
+    <p>Enter my favorite food and click submit for a surprise!</p>
+    <form>
+      <input type="text" id="codeInput" required>
+      <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <p class="error" id="errorMessage">ACCESS DENIED</p>
+    <script>
+      function checkAnswer() {
+        var codeInput = document.getElementById("codeInput").value;
+        if (codeInput.toLowerCase() === "bananas" || codeInput.toLowerCase() === "banana") {
+          window.location.href = "https://i.imgur.com/zntIJmJ.jpg";
+        } else {
+          document.getElementById("errorMessage").style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
